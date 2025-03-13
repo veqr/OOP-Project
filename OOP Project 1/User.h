@@ -5,15 +5,15 @@ using namespace std;
 
 class User
 {
-private:
+protected:
 	string userpassword;
 	string useremail;
+	int type;
 public:
-	virtual void setpassword();
-	virtual void setemail();
-	virtual string getpassword();
-	virtual string getemail();
-	//virtual ~User();
+	virtual void setPassword();
+	virtual void setEmail();
+	virtual string getPassword();
+	virtual string getEmail();
+	virtual ~User();
 
 };
-

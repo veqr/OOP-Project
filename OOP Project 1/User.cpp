@@ -1,40 +1,28 @@
 #include "User.h"
 
-
-
-void User::setpassword()
+void User::setPassword()
 {
 	cout << "Please create a password:\n";
 	cin >> userpassword;
 }
 
-void User::setemail()
+void User::setEmail()
 {
 	cout << "Please enter an email:\n";
 	cin >> useremail;
 }
 
-string User::getpassword()
+string User::getPassword()
 {
 	return string(userpassword);
 }
 
-string User::getemail()
+string User::getEmail()
 {
 	return string(useremail);
 }
 
-/*User::getpassword()
-{
-	return userpassword;
-}
-
-User::getemail()
-{
-	return useremail;
-}
-
 User::~User()
 {
+	cout << "User has been deleted\n";
 }
-*/

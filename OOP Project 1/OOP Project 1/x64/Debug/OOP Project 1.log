@@ -1,4 +1,7 @@
-﻿  OOP Project 1.cpp
+﻿  Member.cpp
+  OOP Project 1.cpp
   User.cpp
   Generating Code...
+F:\oop\OOP Project 1\OOP Project 1.cpp(45,1): warning C4715: 'passwordFunc': not all control paths return a value
+F:\oop\OOP Project 1\Member.cpp(8,1): warning C4715: 'Member::getBorrowed': not all control paths return a value
   OOP Project 1.vcxproj -> F:\oop\OOP Project 1\x64\Debug\OOP Project 1.exe

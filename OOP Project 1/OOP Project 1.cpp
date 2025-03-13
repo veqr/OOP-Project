@@ -1,7 +1,15 @@
 #include <iostream>
 #include <string>
 #include "User.h"
+#include "Member.h"
+#include "Book.h"
+#include <Vector>
 using namespace std;
+
+
+
+vector<Book> books;
+
 
 int passwordFunc(string uemail, string upassword) {
 
@@ -13,9 +21,9 @@ int passwordFunc(string uemail, string upassword) {
 
     while (attempts < 3) {
 
-        cout << "Please enter email";
+        cout << "Please enter email\n";
         cin >> email;
-        cout << "Please enter password";
+        cout << "Please enter password\n";
         cin >> password;
 
         if (email == uemail && password == upassword) {
@@ -23,9 +31,12 @@ int passwordFunc(string uemail, string upassword) {
             return 1;
         }
         else {
-            cout << "Incorrect Login Attempt. Please try again\n";
             attempts++;
             strattempts = to_string(attempts) + " attempts made.\n";
+            if (attempts < 3) {
+                cout << "Incorrect Login Attempt. Please try again\n";
+            }
+
             cout << strattempts;
         }
 
@@ -38,11 +49,12 @@ int passwordFunc(string uemail, string upassword) {
 }
 
 void test1() {
-    cout << "1";
+    cout << "You may now use the program.\n";
 }
 
 void test2() {
-    cout << "test2";
+    cout << "Your access has been restricted from this program.\n";
+    exit(0);
 }
 
 int main()
@@ -51,18 +63,20 @@ int main()
     string password;
 
 
-    User* user1 = new User();
-    user1->setemail();
-    user1->setpassword();
-    email = user1->getemail();
-    password = user1->getpassword();
+    Member* member1 = new Member();
+    member1->setEmail();
+    member1->setPassword();
+    email = member1->getEmail();
+    password = member1->getPassword();
 
-    if (passwordFunc(email, password) == 2) {
+    if (passwordFunc(email, password) == 1) {
         test1();
     }
     else {
         test2();
     }
+    //delete member1;
+    //member1 = nullptr;
 
     return 0;
 
