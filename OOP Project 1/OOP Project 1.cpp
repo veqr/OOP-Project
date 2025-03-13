@@ -3,23 +3,17 @@
 #include "User.h"
 using namespace std;
 
+/*void passwordFunc() {
 
-void passwordFunc() {
-
+    string email;
+    string password;
 
     int attempts = 0;
     string strattempts;
-    string userpassword;
-    string email;
 
     while (attempts < 3) {
 
-        cout << "Please enter email\n";
-        cin >> email;
-        cout << "Please enter password\n";
-        cin >> userpassword;
-
-        if (email == "temp@gmail.com" && userpassword == "1234") {
+        if (email == user1->getemail() && password == user1->getpassword()) {
             cout << "Access Granted!\n";
             break;
         }
@@ -36,10 +30,22 @@ void passwordFunc() {
     }
 
 }
+*/
 
 int main()
 {
-    passwordFunc();
+    string email;
+    string password;
 
+
+    User* user1 = new User();
+    user1->setemail();
+    user1->setpassword();
+    user1->getemail();
+    user1->getpassword();
+
+    //passwordFunc();
+    return 0;
 
 }
+

@@ -1,10 +1,19 @@
 #pragma once
+#include <string>
+#include <iostream>
+using namespace std;
+
 class User
 {
-public:
-
 private:
-	virtual void createuser();
-	virtual ~User();
+	string userpassword;
+	string useremail;
+public:
+	void setpassword();
+	void setemail();
+	string getpassword();
+	string getemail();
+	//virtual ~User();
+
 };
 
