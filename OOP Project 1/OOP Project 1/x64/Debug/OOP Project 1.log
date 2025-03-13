@@ -1,11 +1,4 @@
 ﻿  OOP Project 1.cpp
   User.cpp
-F:\oop\OOP Project 1\User.cpp(19,2): error C2562: 'User::getpassword': 'void' function returning a value
-      F:\oop\OOP Project 1\User.cpp(17,12):
-      see declaration of 'User::getpassword'
-  
-F:\oop\OOP Project 1\User.cpp(24,2): error C2562: 'User::getemail': 'void' function returning a value
-      F:\oop\OOP Project 1\User.cpp(22,12):
-      see declaration of 'User::getemail'
-  
   Generating Code...
+  OOP Project 1.vcxproj -> F:\oop\OOP Project 1\x64\Debug\OOP Project 1.exe

@@ -9,10 +9,10 @@ private:
 	string userpassword;
 	string useremail;
 public:
-	void setpassword();
-	void setemail();
-	string getpassword();
-	string getemail();
+	virtual void setpassword();
+	virtual void setemail();
+	virtual string getpassword();
+	virtual string getemail();
 	//virtual ~User();
 
 };

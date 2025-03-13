@@ -4,13 +4,13 @@
 
 void User::setpassword()
 {
-	cout << "Please create a password";
+	cout << "Please create a password:\n";
 	cin >> userpassword;
 }
 
 void User::setemail()
 {
-	cout << "Please enter an email";
+	cout << "Please enter an email:\n";
 	cin >> useremail;
 }
 

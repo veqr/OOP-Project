@@ -3,7 +3,7 @@
 #include "User.h"
 using namespace std;
 
-/*void passwordFunc() {
+int passwordFunc(string uemail, string upassword) {
 
     string email;
     string password;
@@ -13,9 +13,14 @@ using namespace std;
 
     while (attempts < 3) {
 
-        if (email == user1->getemail() && password == user1->getpassword()) {
+        cout << "Please enter email";
+        cin >> email;
+        cout << "Please enter password";
+        cin >> password;
+
+        if (email == uemail && password == upassword) {
             cout << "Access Granted!\n";
-            break;
+            return 1;
         }
         else {
             cout << "Incorrect Login Attempt. Please try again\n";
@@ -27,10 +32,18 @@ using namespace std;
     }
     if (attempts == 3) {
         cout << "Too many attempts, please try again later.\n";
+        return 2;
     }
 
 }
-*/
+
+void test1() {
+    cout << "1";
+}
+
+void test2() {
+    cout << "test2";
+}
 
 int main()
 {
@@ -41,11 +54,16 @@ int main()
     User* user1 = new User();
     user1->setemail();
     user1->setpassword();
-    user1->getemail();
-    user1->getpassword();
+    email = user1->getemail();
+    password = user1->getpassword();
 
-    //passwordFunc();
+    if (passwordFunc(email, password) == 2) {
+        test1();
+    }
+    else {
+        test2();
+    }
+
     return 0;
 
 }
-
