@@ -1,27 +1,37 @@
 #include "Member.h"
+#include "bookManagement.h"
+
+
+Member::Member()
+{
+	borrowedBooks = {};
+}
 
 void Member::getBorrowed()
 {
-	string takentxt;
-	for (int i = 0;i < 5;i++) {
+    string takentxt;
+    for (const auto& booknum:borrowedBooks) {
 
-		if (borrowedtaken[i] == true) {
-			takentxt = "Taken";
-		}
-		else {
-			takentxt = "Available";
-		}
+        if (booknum.taken == true) {
+            takentxt = "Taken";
+        }
+        else {
+            takentxt = "Available";
+        }
 
-		string book = "Name: " + borrowedname[i] + ", Author: " + borrowedauthor[i] + ", Availibility: " + takentxt + "\n";
+        string bookoutput = "Name: " + booknum.name + ", Author: " + booknum.author + ", Availibility: " + takentxt + "\n";
 
-		cout << string(book);
+        cout << string(bookoutput);
 
-	}
+    }
 }
 
-void Member::setBorrowed()
+vector<Book*> Member::setBorrowed()
 {
-	borrowedname[borrowvalue] = "pname";
-	borrowedauthor[borrowvalue] = "pauthor";
-	borrowedtaken[borrowvalue] = 1;
+    if (borrowedBooks.size() == 5) {
+        cout << "Cannot borrow more than 5 books at once.";
+    }
+    else {
+        borrowedBooks.push_back("FILL THIS IN");
+    }
 }

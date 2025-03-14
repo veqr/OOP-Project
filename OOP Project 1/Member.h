@@ -2,21 +2,19 @@
 #include "User.h"
 #include <string>
 #include <iostream>
+#include <Vector>
+#include "Book.h"
+
 class Member :
     public User
 {
 private:
 protected:
-    string borrowedname[5];
-    string borrowedauthor[5];
-    bool borrowedtaken[5];
-    string reserved[5];
+    vector<Book> borrowedBooks;
+    //string reserved[5];
 public:
-    int borrowingtotal;
-    int borrowvalue;
-    string borrowname;
-    string borrowauthor;
-    bool borrowtaken;
+    Member();
     virtual void getBorrowed();
-    virtual void setBorrowed();
+    vector<Book*> setBorrowed();
+    int borrowTotal = 0;
 };

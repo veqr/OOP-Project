@@ -48,16 +48,7 @@ int passwordFunc(string uemail, string upassword) {
 
 void bookList() {
     
-    vector<Book> books;
 
-    books = {
-        Book("The Stand","Steven King",false),
-        Book("The Hunger Games","Suzanne Collins",false),
-        Book("Harry Potter and the Sorcerer’s Stone","J.K. Rowling",false),
-        Book("Lord of the Flies","George Orwell",false),
-        Book("Fifty Shades of Grey","E.L. James",false)
-
-    };
 }
 
 void test1() {
