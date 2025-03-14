@@ -7,9 +7,16 @@ class Member :
 {
 private:
 protected:
-    string borrowed[5];
+    string borrowedname[5];
+    string borrowedauthor[5];
+    bool borrowedtaken[5];
     string reserved[5];
 public:
     int borrowingtotal;
-    virtual string getBorrowed();
+    int borrowvalue;
+    string borrowname;
+    string borrowauthor;
+    bool borrowtaken;
+    virtual void getBorrowed();
+    virtual void setBorrowed();
 };

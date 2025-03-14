@@ -3,12 +3,10 @@
 #include "User.h"
 #include "Member.h"
 #include "Book.h"
+#include "Librarian.h"
+#include "bookManagement.h"
 #include <Vector>
 using namespace std;
-
-
-
-vector<Book> books;
 
 
 int passwordFunc(string uemail, string upassword) {
@@ -48,8 +46,22 @@ int passwordFunc(string uemail, string upassword) {
 
 }
 
+void bookList() {
+    
+    vector<Book> books;
+
+    books = {
+        Book("The Stand","Steven King",false),
+        Book("The Hunger Games","Suzanne Collins",false),
+        Book("Harry Potter and the Sorcerer’s Stone","J.K. Rowling",false),
+        Book("Lord of the Flies","George Orwell",false),
+        Book("Fifty Shades of Grey","E.L. James",false)
+
+    };
+}
+
 void test1() {
-    cout << "You may now use the program.\n";
+    //cout << "You may now use the program.\n";
 }
 
 void test2() {
@@ -59,22 +71,45 @@ void test2() {
 
 int main()
 {
+
+
+
     string email;
     string password;
+    string newemail;
+    string newpassword;
 
-
+/*
     Member* member1 = new Member();
-    member1->setEmail();
-    member1->setPassword();
+    
+    cout << "Please enter an email:\n";
+    cin >> newemail;
+    
+    member1->setEmail(newemail);
+
+    cout << "Please create a password:\n";
+    cin >> newpassword;
+
+    member1->setPassword(newpassword);
+
     email = member1->getEmail();
     password = member1->getPassword();
+    cout << email << ", " << password << "\n";
+*/
 
+    Member* member2 = new Member();
+    member2->setEmail("test");
+    member2->setPassword("test");
+/*
     if (passwordFunc(email, password) == 1) {
+        member1->setBorrowed();
+        member1->getBorrowed();
         test1();
     }
     else {
         test2();
     }
+*/
     //delete member1;
     //member1 = nullptr;
 

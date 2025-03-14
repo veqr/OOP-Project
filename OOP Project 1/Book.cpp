@@ -1,9 +1,10 @@
 #include "Book.h"
 
-string Book::show()
+
+void Book::show()
 {
 	string takentxt;
-	if (taken == 1) {
+	if (taken == true) {
 		takentxt = "Taken";
 	}
 	else {
@@ -11,5 +12,6 @@ string Book::show()
 	}
 	cout << "Name: " << name << ", Author: " << author << ", Availability: " << takentxt;
 
-	//return string();
 }
+
+Book::Book(string name, string author, bool taken):name(name),author(author),taken(taken){}

@@ -1,15 +1,13 @@
 #include "User.h"
 
-void User::setPassword()
+void User::setPassword(string password)
 {
-	cout << "Please create a password:\n";
-	cin >> userpassword;
+	this->userpassword = password;
 }
 
-void User::setEmail()
+void User::setEmail(string email)
 {
-	cout << "Please enter an email:\n";
-	cin >> useremail;
+	this->useremail = email;
 }
 
 string User::getPassword()

@@ -27,6 +27,12 @@
     <ClCompile Include="Book.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Librarian.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bookManagement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="User.h">
@@ -36,6 +42,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Book.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Librarian.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bookManagement.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

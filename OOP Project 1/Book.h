@@ -1,5 +1,4 @@
 #pragma once
-#include <string>
 #include <iostream>
 using namespace std;
 
@@ -9,8 +8,9 @@ private:
 protected:
 public:
 	bool taken;
-	string author;
 	string name;
-	string show();
+	string author;
+	virtual void show();
+	Book(string name, string author, bool taken);
 };
 

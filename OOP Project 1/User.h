@@ -10,8 +10,8 @@ protected:
 	string useremail;
 	int type;
 public:
-	virtual void setPassword();
-	virtual void setEmail();
+	virtual void setPassword(string password);
+	virtual void setEmail(string email);
 	virtual string getPassword();
 	virtual string getEmail();
 	virtual ~User();
