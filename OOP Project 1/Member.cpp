@@ -26,12 +26,12 @@ void Member::getBorrowed()
     }
 }
 
-vector<Book*> Member::setBorrowed()
+void Member::setBorrowed()
 {
     if (borrowedBooks.size() == 5) {
         cout << "Cannot borrow more than 5 books at once.";
     }
     else {
-        borrowedBooks.push_back("FILL THIS IN");
+        //borrowedBooks.push_back("FILL THIS IN");
     }
 }

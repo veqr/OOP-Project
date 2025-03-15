@@ -1,6 +1,3 @@
-﻿  Book.cpp
-  Librarian.cpp
-  OOP Project 1.cpp
-  Generating Code...
-F:\oop\OOP Project 1\OOP Project 1.cpp(46,1): warning C4715: 'passwordFunc': not all control paths return a value
+﻿  OOP Project 1.cpp
+F:\oop\OOP Project 1\OOP Project 1.cpp(84,1): warning C4715: 'passwordFunc': not all control paths return a value
   OOP Project 1.vcxproj -> F:\oop\OOP Project 1\x64\Debug\OOP Project 1.exe

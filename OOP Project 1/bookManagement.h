@@ -12,5 +12,5 @@ protected:
 public:
 	bookManagement();
 	virtual void show();
-	vector<Book*> filterTaken(const bool taken);
+	int filterTaken(const bool taken);
 };

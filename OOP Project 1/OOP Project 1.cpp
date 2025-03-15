@@ -8,6 +8,43 @@
 #include <Vector>
 using namespace std;
 
+void createMemberAccount() {
+
+}
+
+void createLibrarianAccount() {
+
+}
+
+void createAdminAccount() {
+
+}
+
+void login() {
+
+}
+
+void startScreen() {
+    int choice;
+    cout << "Welcome to the Smart Library Management System\n\n";
+    cout << "Please enter the number to select a choice\n\n1 to create a member account.\n2 to login.\n3 to create a librarian account(librarian password needed).\n4 to create an admin account(admin password needed).\n";
+    cin >> choice;
+    switch (choice) {
+    case 1:
+        createMemberAccount();
+    case 2:
+        login();
+    case 3:
+        createLibrarianAccount();
+    case 4:
+        createAdminAccount();
+    case 5:
+        exit(0);
+    default:
+        cout << "Invalid input, please try again.\n";
+        startScreen();
+    }
+}
 
 int passwordFunc(string uemail, string upassword) {
 
@@ -64,6 +101,7 @@ int main()
 {
 
 
+    startScreen();
 
     string email;
     string password;

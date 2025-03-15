@@ -15,6 +15,6 @@ protected:
 public:
     Member();
     virtual void getBorrowed();
-    vector<Book*> setBorrowed();
+    void setBorrowed();
     int borrowTotal = 0;
 };

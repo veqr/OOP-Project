@@ -18,7 +18,7 @@ void bookManagement::show()
         booknum.showBooks();
     }
 }
-vector<Book*> bookManagement::filterTaken(const bool taken)
+int bookManagement::filterTaken(const bool taken)
 {
     vector<Book*> filter;
     for (auto& bookfilter : books) {
@@ -27,4 +27,5 @@ vector<Book*> bookManagement::filterTaken(const bool taken)
         }
 
     }
+    return 0;
 }
