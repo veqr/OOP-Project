@@ -12,5 +12,6 @@ public:
 	string author;
 	Book(string name, string author, bool taken);
 	virtual void showBooks() const;
+	virtual ~Book();
 };
 

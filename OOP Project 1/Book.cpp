@@ -14,3 +14,8 @@ void Book::showBooks() const
 	cout << "Name: " << name << ", Author: " << author << ", Availability: " << takentxt <<"\n";
 
 }
+
+Book::~Book()
+{
+	cout << "Book object destroyed\n";
+}

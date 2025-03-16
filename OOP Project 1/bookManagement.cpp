@@ -29,3 +29,8 @@ int bookManagement::filterTaken(const bool taken)
     }
     return 0;
 }
+
+bookManagement::~bookManagement()
+{
+    \\cout << "Book Management Object has been destroyed\n";
+}

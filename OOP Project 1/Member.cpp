@@ -35,3 +35,8 @@ void Member::setBorrowed()
         //borrowedBooks.push_back("FILL THIS IN");
     }
 }
+
+Member::~Member()
+{
+    cout << "Member\n";
+}

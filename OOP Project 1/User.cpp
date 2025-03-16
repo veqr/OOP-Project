@@ -10,6 +10,11 @@ void User::setEmail(string email)
 	this->useremail = email;
 }
 
+void User::setAccountType(int type)
+{
+	this->usertype = type;
+}
+
 string User::getPassword()
 {
 	return string(userpassword);
@@ -18,6 +23,11 @@ string User::getPassword()
 string User::getEmail()
 {
 	return string(useremail);
+}
+
+int User::getAccountType()
+{
+	return(usertype);
 }
 
 User::~User()

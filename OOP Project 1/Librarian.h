@@ -11,6 +11,7 @@ public:
     virtual void updateBook();
     virtual void borrowBook();
     virtual void reserveBook();
+    virtual ~Librarian();
 
 
 };

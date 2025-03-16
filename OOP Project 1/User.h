@@ -8,12 +8,14 @@ class User
 protected:
 	string userpassword;
 	string useremail;
-	int type;
+	int usertype;
 public:
 	virtual void setPassword(string password);
 	virtual void setEmail(string email);
+	virtual void setAccountType(int type);
 	virtual string getPassword();
 	virtual string getEmail();
+	virtual int getAccountType();
 	virtual ~User();
 
 };

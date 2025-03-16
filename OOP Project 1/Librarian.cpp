@@ -19,3 +19,8 @@ void Librarian::borrowBook()
 void Librarian::reserveBook()
 {
 }
+
+Librarian::~Librarian()
+{
+	cout << "Librarian\n";
+}
