@@ -12,7 +12,7 @@ void User::setEmail(string email)
 
 void User::setAccountType(int type)
 {
-	this->usertype = type;
+	this->userType = type;
 }
 
 string User::getPassword()
@@ -27,7 +27,7 @@ string User::getEmail()
 
 int User::getAccountType()
 {
-	return(usertype);
+	return(userType);
 }
 
 User::~User()

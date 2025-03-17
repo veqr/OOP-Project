@@ -7,6 +7,9 @@ Member::Member(string name, string author, bool taken) : name(name), author(auth
         borrowedBooks = {
             Book("Name","Author",false)
         };
+        reservedBooks = {
+            Book("Name","Author",false)
+        };
     }
 }
 

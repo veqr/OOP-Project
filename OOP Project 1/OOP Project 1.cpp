@@ -9,17 +9,17 @@
 #include <functional>
 using namespace std;
 
-
 string name;
 string author;
 bool taken;
+int borrowSize = 6;
 
 bookManagement* currentBooksList = new bookManagement();
 Member* memberBooks = new Member(name, author, taken);
 
-vector<string> userEmailVector = {"M","L","A"};
-vector<string> userPasswordVector = {"M","L","A"};
-vector<int> userTypeVector = {1,2,3};
+vector<string> userEmailVector = {"M","L","A","M M"};
+vector<string> userPasswordVector = {"M","L","A","M M"};
+vector<int> userTypeVector = {1,2,3,1};
 
 Member* member1 = new Member(name, author, taken);
 Librarian* librarian1 = new Librarian();
@@ -41,10 +41,14 @@ int createMemberAccount() {
 
     cout << "Please enter an email:\n";
     cin >> newemail;
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
 
     cout << "Please create a password:\n";
     cin >> newpassword;
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
 
     userEmailVector.push_back(newemail);
@@ -74,9 +78,13 @@ int createLibrarianAccount() {
 
     cout << "Please enter an email:\n";
     cin >> newemail;
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
     cout << "Please create a password:\n";
     cin >> newpassword;
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
     userEmailVector.push_back(newemail);
     userPasswordVector.push_back(newpassword);
@@ -105,8 +113,13 @@ int login() {
 
         cout << "Please enter email\n";
         cin >> email;
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
         cout << "Please enter password\n";
         cin >> password;
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
         for (int i = 0; i < userEmailVector.size(); i++) {
             if (email == userEmailVector[i] && password == userPasswordVector[i]) {
@@ -127,6 +140,9 @@ int login() {
                 else if (userTypeVector[i] == 3) {
                     return 3;
                 }
+                else {
+                    cout << "Invalid";
+                }
             }
         }
 
@@ -139,7 +155,7 @@ int login() {
         }
 
 
-        if (attempts == 3) {
+        if (attempts > 3) {
             cout << "Too many attempts, please try again later.\n";
 
         }
@@ -150,16 +166,50 @@ int login() {
 
 void borrowScreen() {
     int bookchoice;
-    cout << "Enter a number from the book list below to select a book.\n";
-    //cout << bookstest.name << " " << bookstest.author << " " << bookstest.taken;
+    cout << "Enter a number from the book list below to borrow a book.\n";
     bookList();
     cin >> bookchoice;
     Book bookstest = currentBooksList->books[bookchoice];
-    cout << "You have chosen: " << bookstest.name << "\n";
-    //cout << books.name;
-    memberBooks->borrowedBooks.emplace_back(bookstest.name, bookstest.author, bookstest.taken);
-    //cout << memberBooks->borrowedBooks[1].name << "\n";
+    if (bookstest.taken == false) {
+        cout << "You have chosen: " << bookstest.name << "\n";
+        if (memberBooks->borrowedBooks.size() < borrowSize + 1) {
+            bookstest.taken = true;
+            currentBooksList->books[bookchoice].taken = true;
+            memberBooks->borrowedBooks.emplace_back(bookstest.name, bookstest.author, bookstest.taken);
+        }
+        else {
+            cout << "You are already borrowing 5 books. Please return a book to be able to borrow another.";
+        }
+        cout << "You are currently borrowing:\n";
+        for (int i = 1; i < memberBooks->borrowedBooks.size(); i++) {
+            string bookname = memberBooks->borrowedBooks[i].name;
+            string bookauthor = memberBooks->borrowedBooks[i].author;
+            cout << "Name: " << bookname << ", Author: " << bookauthor << ", Borrowed\n";
+        }
+    }
+}
 
+void reservedScreen() {
+    int bookchoice;
+    cout << "Enter a number from the book list below to reserve a book.\n";
+    bookList();
+    cin >> bookchoice;
+    Book bookstest = currentBooksList->books[bookchoice];
+    if (bookstest.taken == true) {
+        cout << "You have chosen: " << bookstest.name << "\n";
+        currentBooksList->books[bookchoice].taken = true;
+        memberBooks->reservedBooks.emplace_back(bookstest.name, bookstest.author, bookstest.taken);
+        
+        cout << "You are currently borrowing:\n";
+        for (int i = 1; i < memberBooks->reservedBooks.size(); i++) {
+            string bookname = memberBooks->reservedBooks[i].name;
+            string bookauthor = memberBooks->reservedBooks[i].author;
+            cout << "Name: " << bookname << ", Author: " << bookauthor << ", Borrowed\n";
+        }
+    }
+    else {
+        cout << "The book is available so it cannot be reserved.\n";
+    }
 }
 
 void adminScreen() {
@@ -173,7 +223,6 @@ void librarianScreen() {
 void memberScreen() {
 
     int choice;
-    int bookchoice;
     cout << "This is the Member Screen.\n\n";
     cout << "Please enter the number to select a choice\n\n1 to show the current list of available books.\n2 to borrow a book.\n3 to reserve a book.\n4 to return a book.\n5 to search for a book.\n6 to exit.\n";
     cin >> choice;
@@ -184,8 +233,12 @@ void memberScreen() {
         memberScreen();
     case 2:
         borrowScreen();
+        memberScreen();
 
     case 3:
+        reservedScreen();
+        memberScreen();
+
     case 4:
     case 5:
     case 6:

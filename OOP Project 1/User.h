@@ -8,7 +8,7 @@ class User
 protected:
 	string userpassword;
 	string useremail;
-	int usertype;
+	int userType = 0;
 public:
 	virtual void setPassword(string password);
 	virtual void setEmail(string email);

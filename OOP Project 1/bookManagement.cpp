@@ -3,11 +3,11 @@
 bookManagement::bookManagement()
 {
     books = {
-    Book("The Stand","Steven King",false),
-    Book("The Hunger Games","Suzanne Collins",false),
-    Book("Harry Potter and the Sorcerer's Stone","J.K. Rowling",false),
-    Book("Lord of the Flies","George Orwell",false),
-    Book("Fifty Shades of Grey","E.L. James",false)
+    Book("The_Stand","Steven_King",false),
+    Book("The_Hunger Games","Suzanne_Collins",false),
+    Book("Harry_Potter_and_the_Sorcerer's_Stone","J.K._Rowling",false),
+    Book("Lord_of_the_Flies","George_Orwell",false),
+    Book("Fifty_Shades_of_Grey","E.L._James",false)
 
     };
 }
