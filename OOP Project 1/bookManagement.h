@@ -7,9 +7,9 @@
 class bookManagement
 {
 private:
-	vector<Book> books;
 protected:
 public:
+	vector<Book> books;
 	bookManagement();
 	virtual void show();
 	int filterTaken(const bool taken);

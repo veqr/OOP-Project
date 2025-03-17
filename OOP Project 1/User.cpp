@@ -32,5 +32,5 @@ int User::getAccountType()
 
 User::~User()
 {
-	cout << "User has been deleted\n";
+	//cout << "User has been deleted\n";
 }

@@ -2,9 +2,12 @@
 #include "bookManagement.h"
 
 
-Member::Member()
-{
-	borrowedBooks = {};
+Member::Member(string name, string author, bool taken) : name(name), author(author), taken(taken) {
+    {
+        borrowedBooks = {
+            Book("Name","Author",false)
+        };
+    }
 }
 
 void Member::getBorrowed()
@@ -28,7 +31,7 @@ void Member::getBorrowed()
 
 void Member::setBorrowed()
 {
-    if (borrowedBooks.size() == 5) {
+    if (borrowedBooks.size() == 6) {
         cout << "Cannot borrow more than 5 books at once.";
     }
     else {
@@ -38,5 +41,5 @@ void Member::setBorrowed()
 
 Member::~Member()
 {
-    cout << "Member\n";
+    //cout << "Member\n";
 }

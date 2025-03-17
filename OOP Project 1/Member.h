@@ -10,10 +10,14 @@ class Member :
 {
 private:
 protected:
-    vector<Book> borrowedBooks;
+    
     //string reserved[5];
 public:
-    Member();
+    bool taken;
+    string name;
+    string author;
+    vector<Book> borrowedBooks;
+    Member(string name, string author, bool taken);
     virtual void getBorrowed();
     void setBorrowed();
     int borrowTotal = 0;

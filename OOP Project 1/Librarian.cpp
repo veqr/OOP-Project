@@ -22,5 +22,5 @@ void Librarian::reserveBook()
 
 Librarian::~Librarian()
 {
-	cout << "Librarian\n";
+	//cout << "Librarian\n";
 }

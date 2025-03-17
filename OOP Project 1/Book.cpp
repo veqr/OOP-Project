@@ -17,5 +17,5 @@ void Book::showBooks() const
 
 Book::~Book()
 {
-	cout << "Book object destroyed\n";
+	//cout << "Book object destroyed\n";
 }
