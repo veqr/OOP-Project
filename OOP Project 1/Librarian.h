@@ -7,7 +7,7 @@ private:
 protected:
     int userType = 2;
 public:
-    virtual ~Librarian();
+    virtual ~Librarian();//detructor
 
 
 };

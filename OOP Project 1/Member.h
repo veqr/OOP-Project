@@ -22,5 +22,5 @@ public:
     virtual void getBorrowed();
     void setBorrowed();
     int borrowTotal = 0;
-    virtual ~Member();
+    virtual ~Member();//detructor
 };

@@ -7,6 +7,6 @@ private:
 protected:
     int userType = 3;
 public:
-    virtual ~Admin();
+    virtual ~Admin();//detructor
 };
 

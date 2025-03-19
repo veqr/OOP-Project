@@ -13,5 +13,5 @@ public:
 	bookManagement();
 	virtual void show();
 	int filterTaken(const bool taken);
-	virtual ~bookManagement();
+	virtual ~bookManagement();//detructor
 };

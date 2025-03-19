@@ -16,6 +16,6 @@ public:
 	virtual string getPassword();
 	virtual string getEmail();
 	virtual int getAccountType();
-	virtual ~User();
+	virtual ~User();//detructor
 
 };
