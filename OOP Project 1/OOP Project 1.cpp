@@ -81,6 +81,7 @@ int createLibrarianAccount() {
     }
     else {
         cout << "Librarian password not recognised, the program will now terminate.\n";
+        return 5;
     }
 
     cout << "Please enter an email:\n";
@@ -108,13 +109,14 @@ int createAdminAccount() {
     string newemail;
     string newpassword;
 
-    cout << "Please enter the Librarian password.\n";
+    cout << "Please enter the Admin password.\n";
     cin >> adminpassword;
     if (adminpassword == "Admin123") {
         cout << "Admin password recognised. Please proceed.\n";
     }
     else {
         cout << "Admin password not recognised, the program will now terminate.\n";
+        return 5;
     }
 
     cout << "Please enter an email:\n";
@@ -364,12 +366,10 @@ void removeBook() {
     int delbook;
     cout << "Enter the number to delete a book.\n";
     for (int i = 0; i < currentBooksList->books.size(); i++) {
-        cout << i << ", Name: " << currentBooksList->books[i].name << ", Author: " << currentBooksList->books[i].author;
+        cout << i << ", Name: " << currentBooksList->books[i].name << ", Author: " << currentBooksList->books[i].author << "\n";
     }
     cin >> delbook;
-    currentBooksList->books[delbook].name;
-    currentBooksList->books[delbook].author;
-    currentBooksList->books[delbook].taken;
+    currentBooksList->books.erase(currentBooksList->books.begin() + delbook);
     cout << "This is the new list of books:\n\n";
     bookList();
 }
@@ -537,11 +537,12 @@ void startScreen() {
             cout << "Invalid account type";
         }
     case 3:
-        if (createLibrarianAccount() == 2) {
-            startScreen();
-        }
+        createLibrarianAccount();
+        startScreen();
+        
     case 4:
         createAdminAccount();
+        startScreen();
     case 5:
         exit(0);
     default:
