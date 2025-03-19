@@ -247,55 +247,55 @@ void returnScreen() {
     int bookchoice;
     bool found = false;
     for (int i = 1; i < memberBooks->borrowedBooks.size(); i++) {//loops through all the borrowed books from the user
-        string bookname = memberBooks->borrowedBooks[i].name;
-        string bookauthor = memberBooks->borrowedBooks[i].author;
-        cout << i << ", Name: " << bookname << ", Author: " << bookauthor << ", Borrowed\n";//outputs with a numbered order what books are being borrowed
+        string bookname = memberBooks->borrowedBooks[i].name;//sets a new variable to the name of the book it found
+        string bookauthor = memberBooks->borrowedBooks[i].author;//set a new variable to the author of the book
+        cout << i << ", Name: " << bookname << ", Author: " << bookauthor << ", Borrowed\n";//outputs with a numbered order what books are being borrowed by the member
     }
     cout << "Enter a number from the book list above to return a book.\n";
     cin >> bookchoice;
-    cout << "You are returning: " << memberBooks->borrowedBooks[bookchoice].name << "\n";
+    cout << "You are returning: " << memberBooks->borrowedBooks[bookchoice].name << "\n";//tells the user what book they are returning
     for (int v = 1; v < currentBooksList->books.size(); v++) {//loops through the books vector
         if (memberBooks->borrowedBooks[bookchoice].name == currentBooksList->books[v].name) {//checks that the names are the same for an extra layer of accuracy
-            currentBooksList->books[v].taken = false;//changes the availability from borrowed to available
+            currentBooksList->books[v].taken = false;//changes the availability from borrowed to available in the main currentBooksList
             found = true;
         }
     }
-    if (found == true) {//if the return is successful the code progresses here
+    if (found == true) {//if the code above is successful the code progresses here
         cout << memberBooks->borrowedBooks[bookchoice].name << " has been returned.\n";//tells the user what book they returned to make sure they returned the correct one
-        memberBooks->borrowedBooks.erase(memberBooks->borrowedBooks.begin() + bookchoice);//deletes the book from the member's borrow list
+        memberBooks->borrowedBooks.erase(memberBooks->borrowedBooks.begin() + bookchoice);//deletes the specified book from the member's borrow list
     }
     else {
-        cout << "This book has not been found.\n";
+        cout << "This book has not been found.\n";//tells the user that the book they entered was not found
     }
 }
 
 void searchBooks() {
     
-    string booksearch;
+    string booksearch;//makes a new variable which will be changed by user input
     cout << "Please enter the name of a book you wish to search by name or the author you wish to search for, replace any spaces with an underscore.\n";
-    cin >> booksearch;
+    cin >> booksearch;//this sets the value of the variable
     cin.clear();//makes sure spaces do not make the code skip lines
     cin.ignore(numeric_limits<streamsize>::max(), '\n');//makes sure spaces do not make the code skip lines
 
     for (int booknum = 0; booknum < currentBooksList->books.size(); booknum++) {//loops through the books vector
-        if (booksearch == currentBooksList->books[booknum].name) {//checks if the name the user entered matches any names in the books vector
-            string takentxt;
-            if (currentBooksList->books[booknum].taken == 1) {
+        if (booksearch == currentBooksList->books[booknum].name) {//checks if the text the user entered matches any names in the books vector
+            string takentxt;//creates a new variable that will be changed
+            if (currentBooksList->books[booknum].taken == 1) {//if the book that is being outputted in this loop is being borrowed, the takentxt variable will be changed to Borrowed
                 takentxt = "Borrowed";//informs the user that the book is currently being borrowed
             }
-            else {
-                takentxt = "Available";//tells the user that the bnook is available
+            else {//If the book is available this code runs
+                takentxt = "Available";//changes the takentxt variable to Available
             }
 
 
-            cout << "Name: " << currentBooksList->books[booknum].name << ", Author: " << currentBooksList->books[booknum].author << ", Availability: " << takentxt << "\n";//outputs the book that was found
+            cout << "Name: " << currentBooksList->books[booknum].name << ", Author: " << currentBooksList->books[booknum].author << ", Availability: " << takentxt << "\n";//outputs the name, author, and availability of the book to show that it was found
         }//if there are no matches then the code progresses here
-        if (booksearch == currentBooksList->books[booknum].author) {//checks if the title the user entered matches any names in the books vector
-            string takentxt;
-            if (currentBooksList->books[booknum].taken == 1) {
+        if (booksearch == currentBooksList->books[booknum].author) {//checks if the title the user entered matches any authors in the books vector
+            string takentxt;//creates a new variable that will be changed
+            if (currentBooksList->books[booknum].taken == 1) {//if the book that is being outputted in this loop is being borrowed, the takentxt variable will be changed to Borrowed
                 takentxt = "Borrowed";//informs the user that the book is currently being borrowed
             }
-            else {
+            else {//If the book is available this code runs
                 takentxt = "Available";//tells the user that the bnook is available
             }
 
@@ -382,7 +382,7 @@ void updateBook() {
     else {
         currentBooksList->books[updatebook].taken = true;
     }
-    cout << "Status ahs been updated.\n\n";
+    cout << "Status has been updated.\n\n";
     bookList();//shows the updated vector, books 
     
 }
