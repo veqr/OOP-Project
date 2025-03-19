@@ -364,10 +364,6 @@ void addBook() {
 void removeBook() {
     int delbook;
     cout << "Enter the number to delete a book.\n";
-    /*for (int i = 0; i < currentBooksList->books.size(); i++) {
-        cout << i << ", Name: " << currentBooksList->books[i].name << ", Author: " << currentBooksList->books[i].author << "\n";
-    }
-    */
     bookList();//shows the current vector of books
     cin >> delbook;
     currentBooksList->books.erase(currentBooksList->books.begin() + delbook);//deletes the book the librarian entered
@@ -378,13 +374,14 @@ void removeBook() {
 void updateBook() {
     int updatebook;
     cout << "Enter the number to update a book's status.\n";
-    /*for (int i = 0; i < currentBooksList->books.size(); i++) {
-        cout << i << ", Name: " << currentBooksList->books[i].name << ", Author: " << currentBooksList->books[i].author << "\n";
-    }
-    */
     bookList();//shows the current vector of books
     cin >> updatebook;
-    currentBooksList->books[updatebook].taken != currentBooksList->books[updatebook].taken;
+    if (currentBooksList->books[updatebook].taken == true) {//swaps the bool
+        currentBooksList->books[updatebook].taken = false;
+    }
+    else {
+        currentBooksList->books[updatebook].taken = true;
+    }
     cout << "Status ahs been updated.\n\n";
     bookList();//shows the updated vector, books 
     
@@ -527,13 +524,13 @@ void startScreen() {
         startScreen();//go to start screen
     case 2:
         login();
-        if (accountType == 1) {//if account type is 1, call memberscreen function
+        if (member1->getAccountType() == 1) {//if account type is 1, call memberscreen function
             memberScreen();
         }
-        else if(accountType == 2) {//if account type is 2, call librarianscreen function
+        else if(librarian1->getAccountType() == 2) {//if account type is 2, call librarianscreen function
             librarianScreen();
         }
-        else if (accountType == 3) {//if account type is 3, call adminscreen function
+        else if (admin1->getAccountType() == 3) {//if account type is 3, call adminscreen function
             adminScreen();
         }
         else {
